@@ -136,7 +136,9 @@ function displayMissingMaps() {
                 }
             }
             overview += "<br>";
-        } 
+        } else {
+            $("#collapse" + i).collapse("hide");
+        }
     });
     $("#overviewBody").html(overview);
 }
@@ -147,12 +149,13 @@ function generateMapSelector() {
     $("#mapSelector").append("<div class=\"panel-group\" id=\"panels\">");
 
     $.each(maps, function(i, val) {
+        var bgColor = "#ECECEC";
         $("#panels").append("<div class=\"panel panel-default\" id=\"" + i + "\">");
         $("#" + i).append(" \
-        <div class=\"panel-heading\"> \
+        <div class=\"panel-heading\" style=\"background-color:" + bgColor + "\"> \
             <h4 class=\"panel-title\"> \
-                <a data-toggle=\"collapse\" href=\"#collapse" + i + "\" style=\"color:black;\"> \
-                    " + i.replace(/Tier/g, "Tier ") + " \
+                <a data-toggle=\"collapse\" href=\"#collapse" + i + "\"> \
+                    <strong>" + i.replace(/Tier/g, "Tier ") + "</strong> \
                     <span class=\"glyphicon glyphicon-chevron-down\"></span> \
                 </a> \
             </h4> \
@@ -163,14 +166,14 @@ function generateMapSelector() {
         <div id=\"collapse" + i + "\" class=\"panel-collapse collapse in\"> \
             <div class=\"panel-body\"> \
                 <div class=\"row\" id=\"" + i + "control\" style=\"margin-bottom:15px\"> \
-                    <div style=\"padding:10px\"> \
-                        <a href=\"#/\" role=\"button\" onclick=\"setCategoryComplete('" + i + "')\"> \
+                    <div style=\"padding:5px\"> \
+                        <button style=\"button; margin-right:10px;\" class=\"btn btn-default\" \
+                            onclick=\"setCategoryComplete('" + i + "')\"> \
                             <span class=\"glyphicon glyphicon-ok\"></span> \
                             Mark all maps of this category as completed \
                         </a> \
-                    </div> \
-                    <div style=\"padding:10px\"> \
-                        <a href=\"#/\" role=\"button\" onclick=\"setCategoryNotComplete('" + i + "')\"> \
+                        <button style=\"button\" class=\"btn btn-default\" \
+                            onclick=\"setCategoryNotComplete('" + i + "')\"> \
                             <span class=\"glyphicon glyphicon-remove\"></span> \
                             Mark all maps of this category as not completed  \
                         </a> \
