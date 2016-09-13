@@ -74,9 +74,9 @@ function resetData() {
         completedMaps[i] = [];
     });
     numberOfCompletedMaps = 0;
-    displayMissingMaps();
-    updateProgressBar();
     saveToLocalStorage();
+
+    location.reload();
 }
 
 function toggleMapCompletion(category, name) {
