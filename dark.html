@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">
+        <script
+			  src="https://code.jquery.com/jquery-3.1.0.min.js"
+			  integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+			  crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container" id="overview">
+            <h3>Overview</h3>
+            <strong>Your progress:</strong>
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar" style="width:0%" aria-valuemax="125">
+                    0/125
+                </div>
+            </div>
+
+            <p>
+            <strong>Maps you have yet to complete:</strong>
+
+            <div class="panel panel-default">
+                <div class="panel-body" id="overviewBody" style="line-height: 2;">
+                    <!-- Content from script goes here -->
+                </div>
+            </div>
+        </div>
+        <div class="container" id="mapSelector">
+            <!-- Content from script goes here -->
+        </div>
+
+        <div style="text-align:center">
+            <button type="button" class="btn btn-danger" id="resetButton"
+                data-target="#confirm">Reset all data</button>
+        </div>
+
+        <div id="confirm" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        Are you sure?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+                        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
