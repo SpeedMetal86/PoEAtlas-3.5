@@ -169,10 +169,9 @@ function generateMapSelector() {
     $("#mapSelector").append("<div class=\"panel-group\" id=\"panels\">");
 
     $.each(maps, function(i, val) {
-        var bgColor = "#ECECEC";
         $("#panels").append("<div class=\"panel panel-default\" id=\"" + i + "\">");
         $("#" + i).append(" \
-        <div class=\"panel-heading\" style=\"background-color:" + bgColor + "\"> \
+        <div class=\"panel-heading\"> \
             <h4 class=\"panel-title\"> \
                 <a data-toggle=\"collapse\" href=\"#collapse" + i + "\"> \
                     <strong>" + i.replace(/Tier/g, "Tier ") + "</strong> \
