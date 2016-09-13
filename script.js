@@ -1,8 +1,8 @@
 maps = {
-    Unique : ["Acton's_Nightmare", "Caer_Blaidd,_Wolfpack's_Den", "Death_and_Taxes", "Hall_of_Grandmasters",
-        "Maelström_of_Chaos", "Mao_Kun", "Oba's_Cursed_Trove", "Olmec's_Sanctum", "Poorjoy's_Asylum",
-        "The_Coward's_Trial", "The_Perandus_Manor", "The_Putrid_cloister",
-        "The_Vinktar_Square", "Untainted_Paradise", "Vaults_of_Atziri", "Whakawairua_Tuahu"],
+    Unique : ["Acton's_Nightmare", "Caer_Blaidd,_Wolfpack's_Den", "Death_and_Taxes", "Hallowed_Ground",
+        "Hall_of_Grandmasters", "Maelström_of_Chaos", "Mao_Kun", "Oba's_Cursed_Trove", "Olmec's_Sanctum",
+        "Poorjoy's_Asylum", "The_Coward's_Trial", "The_Perandus_Manor", "The_Putrid_Cloister",
+        "The_Vinktar_Square", "Vaults_of_Atziri", "Whakawairua_Tuahu"],
     Tier1  : ["Arcade", "Crystal_Ore", "Desert", "Jungle_Valley"],
     Tier2  : ["Beach", "Factory", "Ghetto", "Oasis"],
     Tier3  : ["Arid_Lake", "Cavern", "Channel", "Grotto", "Marshes", "Sewer", "Vaal_Pyramid"],
@@ -34,6 +34,13 @@ function toggleChevron(e) {
 $(document).ready(function() {
     $("#mapSelector").on('hidden.bs.collapse', toggleChevron);
     $("#mapSelector").on('shown.bs.collapse', toggleChevron);
+    $("#resetButton").on('click', function(e) {
+        e.preventDefault();
+        $('#confirm').modal({ backdrop: 'static', keyboard: false })
+            .one('click', '#delete', function() {
+                resetData(); // submit the form
+        });
+    });
 
     generateMapSelector();
 
@@ -60,6 +67,16 @@ function loadFromLocalStorage() {
     });
         completedMaps = loadedData;
     }
+}
+
+function resetData() {
+    $.each(maps, function(i, val) {
+        completedMaps[i] = [];
+    });
+    numberOfCompletedMaps = 0;
+    displayMissingMaps();
+    updateProgressBar();
+    saveToLocalStorage();
 }
 
 function toggleMapCompletion(category, name) {
@@ -167,12 +184,12 @@ function generateMapSelector() {
             <div class=\"panel-body\"> \
                 <div class=\"row\" id=\"" + i + "control\" style=\"margin-bottom:15px\"> \
                     <div style=\"padding:5px\"> \
-                        <button style=\"button; margin-right:10px;\" class=\"btn btn-default\" \
+                        <button type=\"button\" style=\"margin-right:10px;\" class=\"btn btn-default\" \
                             onclick=\"setCategoryComplete('" + i + "')\"> \
                             <span class=\"glyphicon glyphicon-ok\"></span> \
                             Mark all maps of this category as completed \
                         </a> \
-                        <button style=\"button\" class=\"btn btn-default\" \
+                        <button type=\"button\" class=\"btn btn-default\" \
                             onclick=\"setCategoryNotComplete('" + i + "')\"> \
                             <span class=\"glyphicon glyphicon-remove\"></span> \
                             Mark all maps of this category as not completed  \
