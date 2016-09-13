@@ -92,7 +92,7 @@ function setMapAsNotComplete(category, name) {
     var index = completedMaps[category].indexOf(name);
     if (index > -1) {
         $("#" + name).find("span").toggleClass("glyphicon-ok glyphicon-remove");
-        $("#" + name).find("a").css("color", "#23527C");
+        $("#" + name).find("a").css("color", "");
         numberOfCompletedMaps--;
         completedMaps[category].splice(index, 1);
 
