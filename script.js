@@ -61,10 +61,10 @@ function loadFromLocalStorage() {
     var loadedData = JSON.parse(localStorage.getItem("data"));
     if (loadedData !== null) {
         $.each(loadedData, function(i, val) {
-        $.each(val, function() {
-            setMapAsComplete(i, this);
+            $.each(val, function() {
+                setMapAsComplete(i, this);
+            });
         });
-    });
         completedMaps = loadedData;
     }
 }
@@ -136,17 +136,20 @@ function updateProgressBar() {
 
 function displayMissingMaps() {
     var overview = "";
-    $.each(maps, function(i, val) {
+    $.each(maps, function(category, val) {
         var missing = val.filter(function(el) {
-            if (completedMaps[i] === undefined) return true;
-            return completedMaps[i].indexOf(el.replace(/'|,/g, "")) < 0;
+            if (completedMaps[category] === undefined) return true;
+            return completedMaps[category].indexOf(el.replace(/'|,/g, "")) < 0;
         });
         if (missing.length !== 0) {
-            overview += i.replace(/Tier/g, "Tier ") + ": ";
+            overview += category.replace(/Tier/g, "Tier ") + ": ";
             for (var i = 0; i < missing.length; i++) {
                 overview += "<a href=\"http://pathofexile.gamepedia.com/";
                 overview += missing[i];
-                overview += "_Map\">" + missing[i].replace(/_/g, " ");
+                if (category !== "Unique") {
+                    overview += "_Map"
+                }
+                overview += "\">" + missing[i].replace(/_/g, " ");
                 overview += "</a>";
                 if (i != missing.length - 1) {
                     overview += ", ";
