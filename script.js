@@ -63,8 +63,6 @@ function loadFromLocalStorage() {
 }
 
 function toggleMapCompletion(category, name) {
-    $("#" + name).find("span").toggleClass("glyphicon-ok glyphicon-remove");
-
     var index = completedMaps[category].indexOf(name);
     if (index < 0) {
         setMapAsComplete(category, name);
@@ -76,6 +74,7 @@ function toggleMapCompletion(category, name) {
 function setMapAsNotComplete(category, name) {
     var index = completedMaps[category].indexOf(name);
     if (index > -1) {
+        $("#" + name).find("span").toggleClass("glyphicon-ok glyphicon-remove");
         $("#" + name).find("a").css("color", "#23527C");
         numberOfCompletedMaps--;
         completedMaps[category].splice(index, 1);
@@ -89,6 +88,7 @@ function setMapAsNotComplete(category, name) {
 function setMapAsComplete(category, name) {
     var index = completedMaps[category].indexOf(name);
     if (index < 0) {
+        $("#" + name).find("span").toggleClass("glyphicon-ok glyphicon-remove");
         $("#" + name).find("a").css("color", "#0A0");
         numberOfCompletedMaps++;
         completedMaps[category].push(name);
@@ -187,7 +187,6 @@ function generateMapSelector() {
                 <a href=\"#/\" role=\"button\" onclick=\"toggleMapCompletion('" + i + "', '" +
                     this.replace(/'|,/g, "") + "')\" style=\"display:block;\"> \
                     <span class=\"glyphicon glyphicon-remove\"></span> \
-                    <br> \
                     " + this.replace(/_/g, " ") + " \
                 </a> \
             </div> \
