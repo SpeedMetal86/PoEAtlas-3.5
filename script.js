@@ -163,13 +163,13 @@ function generateMapSelector() {
         <div id=\"collapse" + i + "\" class=\"panel-collapse collapse in\"> \
             <div class=\"panel-body\"> \
                 <div class=\"row\" id=\"" + i + "control\" style=\"margin-bottom:15px\"> \
-                    <div class=\"col-md-6\"> \
+                    <div style=\"padding:10px\"> \
                         <a href=\"#/\" role=\"button\" onclick=\"setCategoryComplete('" + i + "')\"> \
                             <span class=\"glyphicon glyphicon-ok\"></span> \
                             Mark all maps of this category as completed \
                         </a> \
                     </div> \
-                    <div class=\"col-md-6\"> \
+                    <div style=\"padding:10px\"> \
                         <a href=\"#/\" role=\"button\" onclick=\"setCategoryNotComplete('" + i + "')\"> \
                             <span class=\"glyphicon glyphicon-remove\"></span> \
                             Mark all maps of this category as not completed  \
@@ -181,9 +181,9 @@ function generateMapSelector() {
 
         $.each(val, function() {
             $("#" + i + "maps").append(" \
-            <div class=\"col-md-2\" id=\"" + this.replace(/'|,/g, "")
-                + "\" style=\"word-wrap:break-word; \
-                margin-bottom:7px; margin-top:7px;\"> \
+            <div id=\"" + this.replace(/'|,/g, "")
+                + "\" style=\"word-wrap:break-word; padding:10px; \
+                margin-bottom:7px; margin-top:7px; float:left;\"> \
                 <a href=\"#/\" role=\"button\" onclick=\"toggleMapCompletion('" + i + "', '" +
                     this.replace(/'|,/g, "") + "')\" style=\"display:block;\"> \
                     <span class=\"glyphicon glyphicon-remove\"></span> \
