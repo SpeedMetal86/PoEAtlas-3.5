@@ -38,7 +38,7 @@ $(document).ready(function() {
         e.preventDefault();
         $('#confirm').modal({ backdrop: 'static', keyboard: false })
             .one('click', '#delete', function() {
-                resetData(); // submit the form
+                resetData();
         });
     });
 
