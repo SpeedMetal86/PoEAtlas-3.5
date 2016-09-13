@@ -36,7 +36,6 @@ $(document).ready(function() {
     $("#mapSelector").on('shown.bs.collapse', toggleChevron);
 
     generateMapSelector();
-    displayMissingMaps();
 
     $.each(maps, function(i, val) {
         completedMaps[i] = [];
@@ -44,6 +43,7 @@ $(document).ready(function() {
     });
 
     loadFromLocalStorage();
+    displayMissingMaps();
 });
 
 function saveToLocalStorage() {
@@ -52,11 +52,14 @@ function saveToLocalStorage() {
 
 function loadFromLocalStorage() {
     var loadedData = JSON.parse(localStorage.getItem("data"));
-    $.each(loadedData, function(i, val) {
+    if (loadedData !== null) {
+        $.each(loadedData, function(i, val) {
         $.each(val, function() {
             setMapAsComplete(i, this);
         });
     });
+        completedMaps = loadedData;
+    }
 }
 
 function toggleMapCompletion(category, name) {
