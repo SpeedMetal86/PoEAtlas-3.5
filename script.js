@@ -9,7 +9,7 @@ maps = {
     Tier4  : ["Academy", "Acid_Lakes", "Dungeon", "Graveyard", "Phantasmagoria", "Villa", "Waste_Pool"],
     Tier5  : ["Burial_Chambers", "Dunes", "Mesa", "Peninsula", "Pit", "Primordial_Pool", "Spider_Lair", "Tower"],
     Tier6  : ["Canyon", "Quarry", "Racecourse", "Ramparts", "Spider_Forest", "Strand", "Thicket", "Vaal_City", "Wharf"],
-    Tier7  : ["Arachnid_Tomb", "Armory", "Ashen_Wood", "Castle_Ruins", "Catacoms", "Cells", "Mud_Geyser"],
+    Tier7  : ["Arachnid_Tomb", "Armory", "Ashen_Wood", "Castle_Ruins", "Catacombs", "Cells", "Mud_Geyser"],
     Tier8  : ["Arachnid_Nest", "Arena", "Atoll", "Barrows", "Bog", "Cemetery", "Pier", "Tropical_Island", "Shore"],
     Tier9  : ["Covers", "Crypt", "Museum", "Orchard", "Overgrown_Shrine", "Promenade", "Reef", "Temple"],
     Tier10 : ["Arsenal", "Colonnade", "Courtyard", "Malformation", "Quay", "Terrace", "Underground_River"],
