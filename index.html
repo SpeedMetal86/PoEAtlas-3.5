@@ -32,6 +32,25 @@
         <div class="container" id="mapSelector">
             <!-- Content from script goes here -->
         </div>
+
+        <div style="text-align:center">
+            <button type="button" class="btn btn-danger" id="resetButton"
+                data-target="#confirm">Reset all data</button>
+        </div>
+
+        <div id="confirm" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        Are you sure?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+                        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
