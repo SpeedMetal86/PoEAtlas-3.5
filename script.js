@@ -157,7 +157,7 @@ function displayMissingMaps() {
             }
             overview += "<br>";
         } else {
-            $("#collapse" + i).collapse("hide");
+            $("#collapse" + category).collapse("hide");
         }
     });
     $("#overviewBody").html(overview);
