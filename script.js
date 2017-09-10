@@ -12,7 +12,7 @@ maps = {
     Tier7  : ["Arachnid_Tomb", "Armory", "Ashen_Wood", "Castle_Ruins", "Catacombs", "Cells", "Mud_Geyser"],
     Tier8  : ["Arachnid_Nest", "Arena", "Atoll", "Barrows", "Bog", "Cemetery", "Pier", "Tropical_Island", "Shore"],
     Tier9  : ["Coves", "Crypt", "Museum", "Orchard", "Overgrown_Shrine", "Promenade", "Reef", "Temple"],
-    Tier10 : ["Arsenal", "Colonnade", "Courtyard", "Malformation", "Quay", "Terrace", "Underground_River"],
+    Tier10 : ["Arsenal", "Colonnade", "Courtyard", "Malformation", "Port", "Terrace", "Underground_River"],
     Tier11 : ["Bazaar", "Chateau", "Excavation", "Precinct", "Torture_Chamber", "Underground_Sea", "Wasteland"],
     Tier12 : ["Crematorium", "Estuary", "Ivory_Temple", "Necropolis", "Plateau", "Residence", "Shipyard", "Vault"],
     Tier13 : ["Beacon", "Gorge", "High_Gardens", "Lair", "Plaza", "Scriptorium", "Sulphur_Wastes", "Waterways"],
