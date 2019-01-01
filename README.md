@@ -1,7 +1,6 @@
 # PoEAtlas
 
 To use, open this link:
-https://inputusernamehere.github.io/PoEAtlas/dark.html
+https://speedmetal86.github.io/
 
-Or this for the light theme:
-https://inputusernamehere.github.io/PoEAtlas/
+
