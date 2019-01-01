@@ -3,7 +3,7 @@ maps = {
         "Hall_of_Grandmasters", "Maelström_of_Chaos", "Mao_Kun", "Oba's_Cursed_Trove", "Olmec's_Sanctum",
         "Poorjoy's_Asylum", "The_Coward's_Trial", "The_Perandus_Manor", "The_Putrid_Cloister",
         "The_Vinktar_Square", "Vaults_of_Atziri", "Whakawairua_Tuahu"],
-    Tier1  : ["Arcade", "Crystal_Ore", "Desert", "Jungle_Valley"],
+    Tier1  : ["Atoll", "Channel", "Flooded_Mine", "Ramparts"],
     Tier2  : ["Beach", "Factory", "Ghetto", "Oasis"],
     Tier3  : ["Arid_Lake", "Cavern", "Channel", "Grotto", "Marshes", "Sewer", "Vaal_Pyramid"],
     Tier4  : ["Academy", "Acid_Lakes", "Dungeon", "Graveyard", "Phantasmagoria", "Villa", "Waste_Pool"],
